@@ -15,7 +15,7 @@ export default function Home() {
         <h1>About</h1>
       </main>
       <section className={styles.about}>
-        <p>This is a personal site made with next js to showcase my skills<br/>Also this is the 2nd revision of this site (hopefuly a better version).<br/><h3>Some of my other work:</h3></p>
+        <p>This is a personal site made with next js to showcase my skills<br/>Also this is the 2nd revision of this site (hopefuly a better version!).<br/><h3>Some of my other work:</h3></p>
         <p>(comming soon)</p>
       </section>
       <Footer/>
