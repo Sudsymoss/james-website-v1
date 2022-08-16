@@ -8,12 +8,10 @@
     align-items: center;
 }
 
+
 .projects {
-    min-height: 70vh;
+    min-height: 100vh;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .projects >p {
@@ -55,7 +53,13 @@
     color: rgb(82, 82, 82);
 }
 
-@media (max-width: 640px){
+@media (max-width: 1050px){
+    .gridBody{
+        padding: 0 5vh;
+    }
+}
+
+@media (max-width: 990px){
     .gridcontainer{
       grid-template-columns: auto;
       margin-left: 10vh;
