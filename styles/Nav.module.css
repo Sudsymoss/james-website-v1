@@ -4,13 +4,15 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 10vh;
-    background-color: white;
+    
+    
 }
 
 .container {
     position: fixed;
     width: 100%;
     max-width: inherit;
+    background-color: white;
 }
 
 .navdiv > ul{
