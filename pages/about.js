@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/About.module.css'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 
@@ -12,8 +12,12 @@ export default function Home() {
       </Head>
       <Nav/>
       <main className={styles.main}>
-        <h1>James M</h1>
+        <h1>About</h1>
       </main>
+      <section className={styles.about}>
+        <p>This is a personal site made with next js to showcase my skills<br/>Also this is the 2nd revision of this site (hopefuly a better version).<br/><h3>Some of my other work:</h3></p>
+        <p>Photo gallery</p>
+      </section>
       <Footer/>
     </div>
   )

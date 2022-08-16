@@ -1,0 +1,43 @@
+.navdiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10vh;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    max-width: inherit;
+}
+
+.navdiv > ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navdiv > ul > li{
+    margin: 0 5vh;
+}
+
+.navdiv > ul > li:hover{
+    color: aquamarine;
+}
+
+@media (max-width: 1000px) {
+    .navdiv > ul > li{
+        margin: 0 2vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .navdiv{
+        flex-direction: column;
+    }
+}
+
+.navitems{
+    padding: 0;
+}
