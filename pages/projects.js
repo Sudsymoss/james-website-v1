@@ -25,7 +25,7 @@ export default function Home({projects}) {
                     <>
                         {projects.map((project) => {
                             return (
-                                <Link href={project.id}><div className={styles.griditem}>{project.name}</div></Link>
+                                <Link href={project.id}><div className={styles.griditem} key={project.id}>{project.name}</div></Link>
                             )
                         })}
                     </>
