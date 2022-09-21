@@ -8,7 +8,7 @@ export default function git(){
                 <meta http-equiv="refresh" content="2;url=https://github.com/Sudsymoss/james-website"/>
             </Head>
             <div className={styles.main}>
-                <h1>Loading...</h1>
+                <div className={styles.loader}></div>
             </div>
         </div>
     )
