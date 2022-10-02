@@ -42,6 +42,17 @@ export default function Projectman({ dataa }) {
     return await response.json()
   }
 
+  async function formUpdate(e){
+    e.preventDefault()
+    const response = await fetch('/api/upproject',{
+      method: 'POST',
+      body: JSON.stringify(formData)
+    })
+    location.reload()
+    return await response.json()
+  }
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -98,9 +109,42 @@ export default function Projectman({ dataa }) {
           />
           <button type="submit" className={styles.psubmit}>New Project</button>
         </form>
+
+        <form onSubmit={formUpdate} className={styles.pform} ref={form}>
+          <h2>Modify project</h2>
+          <select name="projectdel" className={styles.ptitle} onChange={(e) => setFormData({ ...formData, name: e.target.value })}>
+            <option value="" selected disabled>--select project--</option>
+            {projects.map(item => (
+              <><option value={item.name} >{item.title}</option></>
+            ))}
+          </select>
+          <input
+            type="text"
+            id="pt"
+            placeholder="Project title"
+            name="title"
+            required
+            pattern="[^\s]+"
+            className={styles.pname}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            placeholder="Project description"
+            name="description"
+            className={styles.pdec}
+            onChange={(e) =>
+              setFormData({ ...formData, description: e.target.value })
+            }
+          />
+          <button type="submit" className={styles.psubmitmod}>Update Project</button>
+        </form>
+
         <form onSubmit={delPost} className={styles.pform}>
           <h2>Delete Project</h2>
-          <select id="cars" name="cars" onChange={(e) => setFormData({ ...formData, title: e.target.value })} className={styles.ptitle}>
+          <select name="projectdel" onChange={(e) => setFormData({ ...formData, title: e.target.value })} className={styles.ptitle}>
             <option value="" selected disabled>--select project--</option>
             {projects.map(item => (
               <><option value={item.title} >{item.title}</option></>

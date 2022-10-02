@@ -97,7 +97,7 @@
   }
   
   .psubmit {
-    background-color: #4CAF50;
+    background-color: #4de65a;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -118,9 +118,21 @@
   .psubmitdel:hover{
     background-color: rgb(213, 0, 0);
   }
+  .psubmitmod {
+    background-color: #ffbc58;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .psubmitmod:hover{
+    background-color: #ffa622;
+  }
   
   .psubmit:hover {
-    background-color: #45a049;
+    background-color: #00ae0f;
   }
   
   .pform {

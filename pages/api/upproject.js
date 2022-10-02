@@ -2,19 +2,20 @@ import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient();
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async(req, res) => {
-    const {id, email, role} = JSON.parse(req.body);
-    
+    const {name, title, description} = JSON.parse(req.body);
     try{
-        const updateRole = await prisma.user.update({
+        const updateProject = await prisma.project.update({
             where: {
-                email: email,
+                name: name,
             },
             data: {
-                role,
+                title: title,
+                description: description,
             }
         })
-        res.status(200).json(updateRole);
+        res.status(200).json(updateProject);
         } catch (error) {
         console.log(error);
+        res.status(404).json(error.meta);
     } 
 }
