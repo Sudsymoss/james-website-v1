@@ -33,7 +33,6 @@ export default function Projectman({ dataa }) {
     return await response.json()
   }
   async function delPost(e) {
-    form.current.reset()
     e.preventDefault()
     const response = await fetch('/api/del', {
       method: 'DELETE',
@@ -99,7 +98,7 @@ export default function Projectman({ dataa }) {
           />
           <button type="submit" className={styles.psubmit}>New Project</button>
         </form>
-        <form onSubmit={delPost} className={styles.pform} ref={form}>
+        <form onSubmit={delPost} className={styles.pform}>
           <h2>Delete Project</h2>
           <select id="cars" name="cars" onChange={(e) => setFormData({ ...formData, title: e.target.value })} className={styles.ptitle}>
             <option value="" selected disabled>--select project--</option>
