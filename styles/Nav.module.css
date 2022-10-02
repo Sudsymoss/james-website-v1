@@ -5,7 +5,6 @@
     justify-content: space-between;
     margin: 0 10vh;
     
-    
 }
 
 .container {
@@ -29,6 +28,10 @@
     color: aquamarine;
 }
 
+.navitems{
+    padding: 0;
+}
+
 @media (max-width: 1000px) {
     .navdiv > ul > li{
         margin: 0 2vh;
@@ -39,8 +42,4 @@
     .navdiv{
         flex-direction: column;
     }
-}
-
-.navitems{
-    padding: 0;
 }

@@ -3,8 +3,16 @@ import styles from '../styles/Projects.module.css'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import Link from 'next/link'
+import { useState } from "react";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient
 
-export default function Home({projects}) {
+export default function Home({data}) {
+
+
+  const [projects, setProjects] = useState(data)
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,17 +28,13 @@ export default function Home({projects}) {
       </main>
       <section className={styles.projects}>
         <p>Some of my other projects:</p>
-        <section className={styles.gridBody}>
-                <div className={styles.gridcontainer}>
-                    <>
-                        {projects.map((project) => {
-                            return (
-                                <Link href={project.id}><div className={styles.griditem} key={project.id}>{project.name}</div></Link>
-                            )
-                        })}
-                    </>
-                </div>
-            </section>
+        <div className={styles.gridbody}>
+        <div className={styles.gridcontainer}>
+          {projects.map(item => (
+            <><div className={styles.gridform}><Link href={item.name} key={item.id}><div className={styles.griditem} key={item.id}>{item.title}</div></Link><p>Last Updated: {item.updatedAt || "null"}</p></div></>
+          ))}
+        </div>
+        </div>
       </section>
       <Footer/>
     </div>
@@ -38,13 +42,11 @@ export default function Home({projects}) {
 }
 
 
-export async function getServerSideProps(){
-    const res = await fetch(`https://suddsy.dev/api/projects`)
-    const data = await res.json()
-    console.log(data)
-    return{
-        props: {
-            projects: data,
-        }
+export async function getServerSideProps() {
+  const projects = await prisma.project.findMany()
+  return {
+    props: {
+      data: JSON.parse(JSON.stringify(projects))
     }
+  }
 }
