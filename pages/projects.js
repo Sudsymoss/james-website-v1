@@ -12,7 +12,6 @@ export default function Home({data}) {
 
   const [projects, setProjects] = useState(data)
 
-
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +19,7 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Silkscreen&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Silkscreen&family=Bungee+Spice&display=swap" rel="stylesheet"/>
       </Head>
       <Nav/>
       <main className={styles.main}>
