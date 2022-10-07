@@ -7,7 +7,7 @@ export default function Nav(){
             <div className={styles.navdiv}>
                 <h3><Link passHref href="/"><a>James M</a></Link></h3>
                 <ul className={styles.navitems}>
-                    <li><Link href="/home" passHref><a>Home</a></Link></li>
+                    <li><Link href="/" passHref><a>Home</a></Link></li>
                     <li><Link href="/about" passHref><a>About</a></Link></li>
                     <li><Link href="/projects" passHref><a>Projects</a></Link></li>
                 </ul>

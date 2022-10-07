@@ -48,7 +48,7 @@
 .gridcontainer {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    gap: 1vh;
     font-family: Verdana;
     max-width: 100%;
 }
