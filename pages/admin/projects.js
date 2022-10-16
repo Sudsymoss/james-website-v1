@@ -7,7 +7,7 @@ import { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 import { useRef } from 'react'
 const prisma = new PrismaClient
-import { useSession, getSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import Loader from '../../components/loader'
 
 export default function Projectman({ dataa }) {

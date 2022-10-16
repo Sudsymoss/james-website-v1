@@ -55,6 +55,7 @@ model User {
   role          String?
   accounts      Account[]
   sessions      Session[]
+  joined        DateTime @default(now())
 }
 
 model VerificationToken {
