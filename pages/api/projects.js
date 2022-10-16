@@ -6,6 +6,5 @@ export default async(req, res) => {
     const createdProject = await prisma.project.create({
         data
     })
-
     res.json(createdProject)
 }

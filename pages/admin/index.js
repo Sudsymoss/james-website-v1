@@ -16,9 +16,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Admin</h1>
         <ul className={styles.links}>
-          <li><Link href="/admin/projects" passHref><a>Project manager</a></Link></li>
-          <li><Link href="/admin/roles" passHref><a>Role manager</a></Link></li>
-          <li><Link href="/auth/login" passHref><a>Login</a></Link></li>
+        <Link href="/admin/projects" passHref><li><a>Project manager</a></li></Link>
+        <Link href="/admin/roles" passHref><li><a>Role manager</a></li></Link>
+        <Link href="/auth/login" passHref><li><a>Login</a></li></Link>
           
         </ul>
       </main>
