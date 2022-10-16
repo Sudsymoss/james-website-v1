@@ -9,6 +9,7 @@ export default function Home() {
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="James M >> Web devloper"></meta>
       </Head>
       <Nav/>
       <main className={styles.main}>
