@@ -4,7 +4,17 @@ module.exports = {
     return [
       {
         source: '/user',
-        destination: '/user/myaccount',
+        destination: '/u/myaccount',
+        permanent: true,
+      },
+      {
+        source: '/user/:slug',
+        destination: '/u/:slug',
+        permanent: true,
+      },
+      {
+        source: '/u',
+        destination: '/u/myaccount',
         permanent: true,
       },
       {
