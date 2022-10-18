@@ -18,6 +18,14 @@ export default function Home() {
         <p>This is a personal site made with next js to showcase my skills<br/>Also this is the 2nd revision of this site (hopefuly a better version!).<br/><h3>Some of my other work:</h3></p>
         <p>(comming soon)</p>
       </section>
+      <section className={styles.about}>
+        <h3>Why use an account?</h3>
+        <p>With an account you get access to:</p>
+        <ul className={styles.aboutlist}>
+          <li>My photos</li>
+          <li>View my projects</li>
+        </ul>
+      </section>
       <Footer/>
     </div>
   )

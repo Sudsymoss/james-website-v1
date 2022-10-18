@@ -48,7 +48,7 @@ export default function Roles() {
         <form onSubmit={delUser} className={styles.pform} onChange={(e) => setFormData({ ...formData, email: e.target.value })}>
           <h2>DELETE ACCOUNT</h2>
           <label for="conf">Confirm</label>
-          <input type="checkbox" id="conf" name="email" value={session.user.email} required/>
+          <input type="checkbox" id="conf" name="email" value={session.user.email} required className={styles.conf}/>
           <button type="submit" className={styles.psubmitdel}>delete</button>
         </form>
       </section>

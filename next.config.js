@@ -27,11 +27,6 @@ module.exports = {
         destination: 'https://replit.com/@Suddsy',
         permanent: true,
       },
-      {
-        source: '/:slug',
-        destination: '/',
-        permanent: false,
-      },
     ]
   },
 }

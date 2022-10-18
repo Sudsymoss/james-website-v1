@@ -15,5 +15,9 @@
     flex-direction: column;
     align-items: center;
 }
-  
+
+.aboutlist{
+    text-align: left;
+    list-style-type: "▶  ";
+}
   
