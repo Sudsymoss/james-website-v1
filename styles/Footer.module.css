@@ -11,4 +11,10 @@
     margin: 0;
     padding: 0;
     color: darkcyan;
+    
+}
+
+
+.footer>p>a:hover{
+    cursor: none;
 }

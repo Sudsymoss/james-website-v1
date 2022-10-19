@@ -19,12 +19,12 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #dedede;
 }
 
 /* Handle */
@@ -35,6 +35,7 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(0, 225, 255);
+  
 }
 
 .loadermain {
@@ -67,3 +68,30 @@ a {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 980px) {
+  ::-webkit-scrollbar-thumb {
+    background: rgb(203, 157, 220);
+  }
+}
+
+#flash:hover{
+  animation: flash 1.5s infinite;
+}
+
+
+@keyframes flash {
+  0% {
+    color: aquamarine;
+  }
+
+  50% {
+    color: rgb(98, 98, 194);
+  }
+
+  100% {
+    color: aquamarine
+  }
+}
+
+

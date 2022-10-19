@@ -16,7 +16,5 @@ export default async(req, res) => {
       //  Block of code to handle errors
       console.error(error)
       res.status(418).json(error.meta)
-    }
-    
-    
+    }   
 }

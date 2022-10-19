@@ -27,6 +27,11 @@
     background-color:transparent;
     color: rgb(34, 185, 134);
     border: 5px rgb(209, 209, 209) solid;
+    cursor: pointer;
+}
+
+.links >li>a:hover{
+  cursor: grabbing;
 }
 
 

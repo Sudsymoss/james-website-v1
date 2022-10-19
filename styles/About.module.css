@@ -9,15 +9,35 @@
 }
 
 .about {
-    min-height: 70vh;
+    
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 33.33%;
 }
 
 .aboutlist{
     text-align: left;
     list-style-type: "▶  ";
 }
+
+.aboutbox{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    align-content: center;
+}
+
+
   
+@media (max-width: 980px) {
+    .about{
+        width: auto;
+    }
+    .aboutbox{
+        flex-direction: column;
+        align-items: center;
+    }
+}
