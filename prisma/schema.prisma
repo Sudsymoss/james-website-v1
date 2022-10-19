@@ -56,6 +56,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   joined        DateTime @default(now())
+  canbedeleted  String? @default("true")
 }
 
 model VerificationToken {

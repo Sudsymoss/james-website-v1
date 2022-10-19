@@ -18,8 +18,18 @@ export default function Roles() {
   if(!session || status != "authenticated"){
     return location.replace("https://suddsy.dev/auth/login")
   } 
+
+  async function reFre(e){
+    e.preventDefault()
+    document.getElementById("Admin_alert__Lgg_p").style.visibility = "hidden";
+  }
   async function delUser(e){
     console.log(formData)
+    if(session.user.canbedeleted === "false"){
+      e.preventDefault()
+      document.getElementById("Admin_alert__Lgg_p").style.visibility = "visible";
+      return
+    }
     e.preventDefault()
     const response = await fetch('/api/deluser',{
       method: 'DELETE',
@@ -43,6 +53,7 @@ export default function Roles() {
       <Nav/>
       <main className={styles.main}>
         <h1>My Account</h1>
+        <p>Joined: {session.user.joined}</p>
       </main>
       <section className={styles.projects}>
         <form onSubmit={delUser} className={styles.pform} onChange={(e) => setFormData({ ...formData, email: e.target.value })}>
@@ -52,6 +63,14 @@ export default function Roles() {
           <button type="submit" className={styles.psubmitdel}>delete</button>
         </form>
       </section>
+      <div id={styles.alert}>
+            <h1>!!ALERT!!</h1>
+            <p>This account can not be deleted!</p>
+            <h3>If you beleive this is a error please contact us!</h3>
+            <form onSubmit={reFre}>
+            <button className={styles.psubmit} type="submit">Dismiss</button>
+            </form>
+        </div>
       <Footer/>
     </div>
   )

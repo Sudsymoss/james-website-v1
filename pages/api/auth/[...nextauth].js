@@ -20,6 +20,8 @@ export default NextAuth({
   callbacks: {
     async session({ session, token, user }) {
       session.user.role = user.role; // Add role value to user object so it is passed along with session
+      session.user.canbedeleted = user.canbedeleted;
+      session.user.joined = user.joined;
       return session;
     }
   },
