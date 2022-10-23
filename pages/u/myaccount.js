@@ -55,7 +55,7 @@ export default function Roles() {
         <h1>My Account</h1>
         <p>Joined: {session.user.joined}</p>
       </main>
-      <section className={styles.projects}>
+      <section className={styles.forms}>
         <form onSubmit={delUser} className={styles.pform} onChange={(e) => setFormData({ ...formData, email: e.target.value })}>
           <h2>DELETE ACCOUNT</h2>
           <label for="conf">Confirm</label>

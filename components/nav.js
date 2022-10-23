@@ -10,7 +10,7 @@ export default function Nav(){
                     <li><Link href="/" passHref><a>Home</a></Link></li>
                     <li><Link href="/about" passHref><a>About</a></Link></li>
                     <li><Link href="/projects" passHref><a>Projects</a></Link></li>
-                    <li id="flash"><Link href="/u/myaccount" passHref><a>Account</a></Link></li>
+                    <li id="conflash"><Link href="/u/myaccount" passHref><a>Account</a></Link></li>
                 </ul>
             </div>
         </div>

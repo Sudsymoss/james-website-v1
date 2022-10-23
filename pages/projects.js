@@ -59,7 +59,7 @@ export async function getServerSideProps({ req, res }) {
   const projects = await prisma.project.findMany();
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
+    'public, s-maxage=119, stale-while-revalidate=299'
   )
   return {
     props: {

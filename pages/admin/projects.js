@@ -93,6 +93,7 @@ export default function Projectman({ dataa }) {
             ))}
           </div>
         </div>
+        
         <div className={styles.forms}>
           <form onSubmit={savePost} className={styles.pform} ref={form}>
             <h2>New Project</h2>
