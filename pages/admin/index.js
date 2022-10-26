@@ -25,7 +25,7 @@ export default function Home() {
               <a>Role manager</a>
             </li>
           </Link>
-          <Link href="/auth/login" passHref>
+          <Link href="/auth" passHref>
             <li>
               <a>Login</a>
             </li>

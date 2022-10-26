@@ -21,6 +21,7 @@
     margin: 3vh 0;
     border: 5px solid rgb(209, 209, 209);
     font-weight: 600;
+    transition: background-color 0.5s, border 0.5s, color 0.2s;
 }
 
 .links >li:hover{

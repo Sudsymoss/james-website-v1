@@ -50,6 +50,7 @@
   font-family: 'Bungee Spice', cursive;
   cursor: pointer;
   background-color: rgb(66, 66, 66);
+  transition: margin 0.5s;
 }
 
 .griditem:hover{

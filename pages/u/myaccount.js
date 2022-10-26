@@ -16,7 +16,7 @@ export default function Roles() {
 
   
   if(!session || status != "authenticated"){
-    return location.replace("https://suddsy.dev/auth/login")
+    return location.replace("https://suddsy.dev/auth")
   } 
 
   async function reFre(e){
