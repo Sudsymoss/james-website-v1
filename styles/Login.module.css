@@ -19,3 +19,75 @@
 .main>button:hover{
     background-color: rgba(0, 139, 139, 0.749);
 }
+
+.loginbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    border-radius: 5px;
+    width: 390px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+    -o-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+    -ms-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+}
+
+.loginbtn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #59d4af;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Source Sans Pro';
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    box-shadow: 0 10px 30px 0 rgba(89, 212, 183, 0.5);
+    -moz-box-shadow: 0 10px 30px 0 rgba(89, 198, 212, 0.5);
+    -webkit-box-shadow: 0 10px 30px 0 rgba(89, 212, 183, 0.5);
+    -o-box-shadow: 0 10px 30px 0 rgba(89, 210, 212, 0.5);
+    -ms-box-shadow: 0 10px 30px 0 rgba(89, 212, 200, 0.5);
+    margin: 3vh;
+}
+
+.loginbtn:hover{
+        background-color: #1f9185;
+        box-shadow: 0 10px 30px 0 rgba(89, 191, 212, 0.8);
+        -moz-box-shadow: 0 10px 30px 0 rgba(89, 193, 212, 0.8);
+        -webkit-box-shadow: 0 10px 30px 0 rgba(89, 200, 212, 0.8);
+        -o-box-shadow: 0 10px 30px 0 rgba(89, 198, 212, 0.8);
+        -ms-box-shadow: 0 10px 30px 0 rgba(89, 196, 212, 0.8);
+    
+}
+
+.logincancel{
+    color: grey;
+    bottom: 0;
+    position: relative;
+    transition: margin-right 2s .5s;
+}
+
+.logincancel:hover{
+    text-decoration: underline;
+    
+}
