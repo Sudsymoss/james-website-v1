@@ -53,7 +53,7 @@ export default function SignIn({ providers }) {
       </div>
     );
   } else if (status === "loading"){
-    return <Loader/>
+    return <p>Loading...</p>
   }
 }
 
