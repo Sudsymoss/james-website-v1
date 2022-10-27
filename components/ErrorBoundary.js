@@ -23,7 +23,9 @@ class ErrorBoundary extends React.Component {
         return (
           <div>
             <p>Their was an error!</p>
-            <Loader/>
+        <div className="loadermain">
+            <div className="loaderred"></div>
+        </div>
           </div>
         )
       }
