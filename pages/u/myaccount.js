@@ -13,7 +13,7 @@ export default function Roles() {
   if (status === "loading") {
     return <Loader/>
   }
-  if(status === "unauthenticated"){
+  if(status === "unauthenticated"  || !session){
     return location.replace("https://suddsy.dev/")
   }
 
