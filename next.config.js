@@ -27,16 +27,6 @@ module.exports = {
         destination: 'https://replit.com/@Suddsy',
         permanent: true,
       },
-      {
-        source: '/auth/login',
-        destination: 'https://suddsy.dev/auth',
-        permanent: true,
-      },
-      {
-        source: '/auth/logout',
-        destination: 'https://suddsy.dev/auth',
-        permanent: true,
-      },
     ]
   },
 }

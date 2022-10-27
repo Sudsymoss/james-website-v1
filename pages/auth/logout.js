@@ -7,12 +7,10 @@ import Link from 'next/link'
 export default function SignIn() {
   const { data: session, status } = useSession();
   if (status === "unauthenticated") {
-    return (
-      <div>
-        <Loader />
-        <meta http-equiv="refresh" content="2;url=/auth/login" />
-      </div>
-    );
+    return location.replace('./login')
+  }
+  if (status === "loading"){
+    return <Loader/>
   }
   return (
     <div>
