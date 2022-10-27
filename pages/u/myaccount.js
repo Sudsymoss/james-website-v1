@@ -13,9 +13,9 @@ export default function Roles() {
   if (status === "loading") {
     return <Loader/>
   }
-  if(status === "unauthenticated"  || !session){
-    return location.replace("https://suddsy.dev/")
-  }
+  if(!session || status != "authenticated"){
+    return location.replace("https://suddsy.dev/auth/login")
+  } 
 
   async function reFre(e){
     e.preventDefault()
