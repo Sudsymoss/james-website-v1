@@ -13,9 +13,32 @@ export default function Roles() {
   if (status === "loading") {
     return <Loader/>
   }
-  if(status === "authenticated"){
-    return(
-      <div className={styles.container}>
+  if(status === "unauthenticated"){
+    return location.replace("https://suddsy.dev/")
+  }
+
+  async function reFre(e){
+    e.preventDefault()
+    document.getElementById("Admin_alert__Lgg_p").style.visibility = "hidden";
+  }
+  async function delUser(e){
+    console.log(formData)
+    if(session.user.canbedeleted === "false"){
+      e.preventDefault()
+      document.getElementById("Admin_alert__Lgg_p").style.visibility = "visible";
+      return
+    }
+    e.preventDefault()
+    const response = await fetch('/api/deluser',{
+      method: 'DELETE',
+      body: JSON.stringify(formData)
+    })
+    location.replace("https://suddsy.dev/")
+    return await response.json()
+  }
+
+  return (
+    <div className={styles.container}>
       <Head>
         <title>My Account</title>
         <meta charset="UTF-8"/>
@@ -48,31 +71,5 @@ export default function Roles() {
         </div>
       <Footer/>
     </div>
-    )
-  }
-
-  async function reFre(e){
-    e.preventDefault()
-    document.getElementById("Admin_alert__Lgg_p").style.visibility = "hidden";
-  }
-  async function delUser(e){
-    console.log(formData)
-    if(session.user.canbedeleted === "false"){
-      e.preventDefault()
-      document.getElementById("Admin_alert__Lgg_p").style.visibility = "visible";
-      return
-    }
-    e.preventDefault()
-    const response = await fetch('/api/deluser',{
-      method: 'DELETE',
-      body: JSON.stringify(formData)
-    })
-    location.replace("https://suddsy.dev/")
-    return await response.json()
-  }
-
-  return (
-    location.replace("https://suddsy.dev/")
   )
 }
-
