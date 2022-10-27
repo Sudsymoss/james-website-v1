@@ -22,7 +22,7 @@ class ErrorBoundary extends React.Component {
         // You can render any custom fallback UI
         return (
           <div>
-            <p>Their was an error!</p>
+            <p>An error has occurred! Refreshing...</p>
         <div className="loadermain">
             <div className="loaderred"></div>
         </div>
