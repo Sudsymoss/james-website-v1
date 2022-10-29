@@ -4,7 +4,7 @@ import Head from "next/head";
 import Loader from "../../components/loader";
 import Link from 'next/link'
 
-export default function SignIn() {
+export default function Logout() {
   const { data: session, status } = useSession();
   if (status === "unauthenticated") {
     return location.replace('./login')

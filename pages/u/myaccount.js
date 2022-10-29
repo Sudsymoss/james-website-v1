@@ -7,7 +7,7 @@ import { useSession, getSession } from "next-auth/react"
 import Loader from '../../components/loader'
 
 
-export default function Roles() {
+export default function Account() {
 
   const { data: session, status } = useSession()
   const [formData, setFormData] = useState({})
