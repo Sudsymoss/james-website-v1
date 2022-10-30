@@ -23,7 +23,7 @@ export default function Home({ data }) {
           crossorigin
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Silkscreen&family=Bungee+Spice&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Silkscreen&family=Oxygen&display=swap"
           rel="stylesheet"
         />
       </Head>
