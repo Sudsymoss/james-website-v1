@@ -47,7 +47,7 @@
   flex-direction: row;
   align-items: center;
   color: rgb(0, 0, 0);
-  font-family: 'Oxygen', 'courier new';
+  font-family: 'Oxygen', 'Courier New', Courier, monospace;
   cursor: pointer;
   background-color: rgb(66, 66, 66);
   transition: margin 0.5s, box-shadow 0.7s;
