@@ -49,6 +49,7 @@
   color: rgb(0, 0, 0);
   font-family: 'Oxygen', 'Courier New', Courier, monospace;
   font-weight: 700;
+  color: azure;
   cursor: pointer;
   background-color: rgb(66, 66, 66);
   transition: margin 0.5s, box-shadow 0.7s;
