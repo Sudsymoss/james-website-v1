@@ -1,12 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Projects.module.css";
-import Nav from "../components/nav";
-import Footer from "../components/footer";
 import Link from "next/link";
 import { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-import Script from 'next/script'
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);

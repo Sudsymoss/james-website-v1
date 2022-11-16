@@ -20,7 +20,7 @@ export default function Home({ data }) {
     return <Loader />;
   }
   if (!session || status === "unauthenticated") {
-    return <p>Access Denied! <br/>You must be logged in to view this page!</p>;
+    return location.replace("/auth/login")
   }
 
   return (
