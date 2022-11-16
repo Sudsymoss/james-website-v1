@@ -128,6 +128,16 @@ export default function Projectman({ dataa }) {
                 setFormData({ ...formData, description: e.target.value })
               }
             />
+            <input
+              type="text"
+              placeholder="Display Link"
+              name="srcLink"
+              pattern="[^\s]+"
+              className={styles.pname}
+              onChange={(e) =>
+                setFormData({ ...formData, srcLink: e.target.value })
+              }
+            />
             <button type="submit" className={styles.psubmit}>
               New Project
             </button>
@@ -170,6 +180,16 @@ export default function Projectman({ dataa }) {
               className={styles.pdec}
               onChange={(e) =>
                 setFormData({ ...formData, description: e.target.value })
+              }
+            />
+            <input
+              type="text"
+              placeholder="Display Link"
+              name="srcLink"
+              pattern="[^\s]+"
+              className={styles.pname}
+              onChange={(e) =>
+                setFormData({ ...formData, srcLink: e.target.value })
               }
             />
             <button type="submit" className={styles.psubmitmod}>

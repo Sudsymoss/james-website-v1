@@ -6,9 +6,36 @@ import Link from "next/link";
 import { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
+import Script from 'next/script'
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);
+  function countdown() {
+    //--------------------
+    // ERROR IS DEV ONLY!
+    //--------------------
+    var countDownDate = new Date("Nov 25, 2022 00:00:00").getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Display the result in the element with id="demo"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Fixed?";
+      }
+    }, 1000);
+  }
 
   return (
     <div className={styles.container}>
@@ -32,6 +59,8 @@ export default function Home({ data }) {
         <div className={styles.p404}>
           <h1>Sorry!</h1>
           <h3>Project currently unavailable for view!</h3>
+          <h4 onLoad={countdown()}>Expected fix date: <p id="countdown"></p></h4>
+          
           <Link passHref href="/projects"><a className={styles.homebut}>back</a></Link>
         </div>
       </main>

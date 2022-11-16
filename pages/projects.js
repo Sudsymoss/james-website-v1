@@ -37,7 +37,7 @@ export default function Home({ data }) {
             {projects.map((item) => (
               <>
                 <div className={styles.gridform}>
-                  <Link href="/p404" key={item.id}>
+                  <Link href={item.name} key={item.id}>
                     <div className={styles.griditem} key={item.id}>
                       {item.title}
                     </div>
@@ -47,6 +47,7 @@ export default function Home({ data }) {
               </>
             ))}
           </div>
+          <h3 onLoad={countdown()}>Expected fix date: <p id="countdown"></p></h3>
         </div>
       </section>
       <Footer />
@@ -67,4 +68,31 @@ export async function getServerSideProps({ req, res }) {
       data: JSON.parse(JSON.stringify(projects)),
     },
   };
+}
+
+function countdown(){
+  //--------------------
+  // ERROR IS DEV ONLY!
+  //--------------------
+  var countDownDate = new Date("Nov 25, 2022 00:00:00").getTime();
+// Update the count down every 1 second
+  var x = setInterval(function() {
+    // Get today's date and time
+    var now = new Date().getTime();
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Display the result in the element with id="demo"
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "Fixed?";
+    }
+  }, 1000);
 }

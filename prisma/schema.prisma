@@ -17,6 +17,7 @@ model Project {
   title  String   @unique @db.VarChar(15)
   name   String?  @unique
   description String?
+  srcLink String @default("p404")
 }
 
 model Account {
