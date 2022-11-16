@@ -54,7 +54,6 @@ export default function Home({ data }) {
           rel="stylesheet"
         />
       </Head>
-      <Nav />
       <main className={styles.main}>
         <div className={styles.p404}>
           <h1>Sorry!</h1>
@@ -64,7 +63,6 @@ export default function Home({ data }) {
           <Link passHref href="/projects"><a className={styles.homebut}>back</a></Link>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
