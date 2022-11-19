@@ -25,8 +25,6 @@ export default function Home() {
         <div className={styles.p404}>
           <h1>Sorry!</h1>
           <h3>Project currently unavailable for view!</h3>
-          <h4 onLoad={countdown()}>Expected fix date: <p id="countdown"></p></h4>
-          
           <Link passHref href="/projects"><a className={styles.homebut}>back</a></Link>
         </div>
       </main>
