@@ -22,13 +22,11 @@
 
 .navdiv > ul > li{
     margin: 0 5vh;
-    transition: color 0.2s, text-shadow 0.2s ;
-    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .navdiv > ul > li:hover{
-    color: aquamarine;
-    text-shadow: 2px 2px #949494a0;
+    color: rgb(74, 211, 165);
 }
 
 .navitems{
