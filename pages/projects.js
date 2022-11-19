@@ -9,7 +9,37 @@ const prisma = new PrismaClient();
 
 export default function Home({ data }) {
   const [projects, setProjects] = useState(data);
-
+  if (projects.some(item => item.name === 'p404')) {
+    return (
+      <div className={styles.container}>
+        <Head>
+          <title>Projects</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Silkscreen&family=Oxygen&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+        </Head>
+        <Nav />
+        <main className={styles.main}>
+          <span className={styles.materialsymbolsoutlinedwarning}>
+            error
+          </span>
+          <h1>No projects found!</h1>
+          <p>Server may be offline!</p>
+        </main>
+        <Footer />
+      </div>
+    )
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -47,7 +77,7 @@ export default function Home({ data }) {
               </>
             ))}
           </div>
-          <h3 onLoad={countdown()}>Expected fix date: <p id="countdown"></p></h3>
+
         </div>
       </section>
       <Footer />
@@ -55,44 +85,22 @@ export default function Home({ data }) {
   );
 }
 
-//href for plink is {item.name}
 
 export async function getServerSideProps({ req, res }) {
-  const projects = await prisma.project.findMany();
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=119, stale-while-revalidate=299'
-  )
-  return {
-    props: {
-      data: JSON.parse(JSON.stringify(projects)),
-    },
-  };
-}
-
-function countdown(){
-  //--------------------
-  // ERROR IS DEV ONLY!
-  //--------------------
-  var countDownDate = new Date("Nov 25, 2022 00:00:00").getTime();
-// Update the count down every 1 second
-  var x = setInterval(function() {
-    // Get today's date and time
-    var now = new Date().getTime();
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    // Display the result in the element with id="demo"
-    document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-    
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("countdown").innerHTML = "Fixed?";
-    }
-  }, 1000);
+  try {
+    const projects = await prisma.project.findMany();
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=119, stale-while-revalidate=299'
+    )
+    return {
+      props: {
+        data: JSON.parse(JSON.stringify(projects)),
+      },
+    };
+  }
+  catch (error) {
+    console.error(error)
+    return { props: { data: [{ name: "p404" }] } }
+  }
 }

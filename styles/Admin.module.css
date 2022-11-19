@@ -124,6 +124,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.5s;
   }
   .psubmitdel:hover{
     background-color: rgb(213, 0, 0);
@@ -193,12 +194,6 @@
     }
   }
 
-  #web40 {
-      background-image: url("/projects/website4-0.jpg");
-      background-position: center;
-      background-size: cover;
-      
-}
 
   
   

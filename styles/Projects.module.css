@@ -59,6 +59,7 @@
 
 .gridform>p {
     color: rgb(177, 177, 177);
+    transition: all 0.2s;
 }
 
 .gridform>p:hover {
@@ -103,11 +104,21 @@
     box-shadow: 20px 15px 15px rgba(17, 17, 17, 0.547);
 }
 
-#web40 {
-    background-image: url("/projects/website4-0.jpg");
-    background-position: center;
-    background-size: cover;
-}
+.materialsymbolsoutlinedwarning {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
 
 @media (max-width: 1050px) {
     .gridBody {
