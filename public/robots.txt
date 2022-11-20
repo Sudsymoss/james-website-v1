@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /projects/
+User-agent: *
+Disallow: /about/
+User-agent: *
+Disallow: /admin/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://suddsy.dev/sitemap.xml
