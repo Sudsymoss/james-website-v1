@@ -9,8 +9,7 @@ export default function Nav() {
         return (
             <div className={styles.container}>
                 <div className={styles.navdiv}>
-                    <Script src="nameindex.js" strategy="afterInteractive" onLoad={() => {typeF()}} />
-                    <h3><Link passHref href="/"><a id="name">James M</a></Link></h3>
+                    <h3><Link passHref href="/"><a>James M</a></Link></h3>
                     <ul className={styles.navitems}>
                         <li><Link href="/" passHref><a>Home</a></Link></li>
                         <li><Link href="/about" passHref><a>About</a></Link></li>
@@ -24,8 +23,7 @@ export default function Nav() {
     return (
         <div className={styles.container}>
             <div className={styles.navdiv}>
-                <Script src="nameindex.js" strategy="afterInteractive" onLoad={() => {typeF()}} />
-                <h3><Link passHref href="/"><a id="name">James M</a></Link></h3>
+                <h3><Link passHref href="/"><a>James M</a></Link></h3>
                 <ul className={styles.navitems}>
                     <li><Link href="/" passHref><a>Home</a></Link></li>
                     <li><Link href="/about" passHref><a>About</a></Link></li>
