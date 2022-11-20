@@ -23,14 +23,39 @@
 .navdiv > ul > li{
     margin: 0 5vh;
     transition: color 0.3s;
+    text-decoration: none;
+background-image: linear-gradient(#d99a5a, #d99a5a);
+background-size: 0% 0.1em;
+background-position-y: 100%;
+background-position-x: 50%;
+background-repeat: no-repeat;
+transition: background-size 0.2s ease-in-out;
 }
 
 .navdiv > ul > li:hover{
     color: rgb(74, 211, 165);
+    background-size: 100% 0.1em;
 }
 
 .navitems{
     padding: 0;
+    align-items: center;
+}
+
+.usericon{
+    max-width: 5vh;
+    margin: 0 5vh;
+    border: 3px solid rgb(208, 208, 208);
+    border-radius: 50%;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.usericon:hover{
+    border-color: #d99a5a;
+}
+
+.acc{
+    display: none;
 }
 
 @media (max-width: 1000px) {
@@ -42,5 +67,11 @@
 @media (max-width: 600px) {
     .navdiv{
         flex-direction: column;
+    }
+    .acc{
+        display: block;
+    }
+    .usericon{
+        display: none;
     }
 }

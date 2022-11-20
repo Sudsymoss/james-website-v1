@@ -1,20 +1,38 @@
-.footer{
+.footer {
     display: flex;
     flex-direction: column;
     min-height: 10vh;
     justify-content: center;
     align-items: center;
     border-top: 1px solid gray;
-} 
+}
 
-.footer > p {
+.footer>p {
     margin: 0;
     padding: 0;
     color: darkcyan;
-    
+
 }
 
 
-.footer>p>a:hover{
+.footer>p>a:hover {
     cursor: none;
+}
+
+.logoutbut {
+    color: gray;
+    transition: color 0.3s;
+    text-decoration: none;
+    background-image: linear-gradient(#b6b6b6, #464646);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.logoutbut:hover {
+    color: rgb(59, 59, 59);
+    background-size: 100% 0.1em;
+    background-position-x: 0%;
 }

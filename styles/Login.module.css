@@ -68,6 +68,7 @@
     -o-box-shadow: 0 10px 30px 0 rgba(89, 210, 212, 0.5);
     -ms-box-shadow: 0 10px 30px 0 rgba(89, 212, 200, 0.5);
     margin: 3vh;
+    
 }
 
 .loginbtn:hover{
@@ -85,10 +86,17 @@
     bottom: 0;
     position: relative;
     transition: all 2s cubic-bezier(0.94, 0, 0.51, 0.69);
+    text-decoration: none;
+background-image: linear-gradient(#b6b6b6, #464646);
+background-size: 0% 0.1em;
+background-position-y: 100%;
+background-position-x: 50%;
+background-repeat: no-repeat;
+transition: background-size 0.2s ease-in-out;
 }
 
 .logincancel:hover{
-    text-decoration: underline;
+    background-size: 100% 0.1em;
     
 }
 
