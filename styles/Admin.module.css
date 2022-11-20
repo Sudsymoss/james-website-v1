@@ -1,200 +1,217 @@
 .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .links{
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
 }
 
 .links > li{
-    background-color: rgb(209, 209, 209);
-    text-align: center;
-    padding: 2vh;
-    border-radius: 10px;
-    margin: 3vh 0;
-    border: 5px solid rgb(209, 209, 209);
-    font-weight: 600;
-    transition: background-color 0.5s, border 0.5s, color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 7vh;
+  background-color: #59d4af;
+  border: 5px solid transparent;
+  border-radius: 25px;
+  font-family: 'Source Sans Pro';
+  font-size: 2vh;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: all .4s;
+  box-shadow: 0 10px 30px 0 rgb(89 212 183 / 50%);
+  -moz-box-shadow: 0 10px 30px 0 rgba(89, 198, 212, 0.5);
+  -webkit-box-shadow: 0 10px 30px 0 rgb(89 212 183 / 50%);
+  -o-box-shadow: 0 10px 30px 0 rgba(89, 210, 212, 0.5);
+  -ms-box-shadow: 0 10px 30px 0 rgba(89, 212, 200, 0.5);
+  margin: 3vh;
+  text-align: center;
 }
 
+
 .links >li:hover{
-    background-color:transparent;
-    color: rgb(34, 185, 134);
-    border: 5px rgb(209, 209, 209) solid;
-    cursor: pointer;
+  background-color:transparent;
+  color: rgb(34, 185, 134);
+  border: 5px rgb(209, 209, 209) solid;
+  cursor: pointer;
 }
 
 .links >li>a:hover{
-  cursor: grabbing;
+cursor: grabbing;
 }
+
+
 
 
 
 
 
 .projects {
-    min-height: 100vh;
-    text-align: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
 
 .gridBody {
-    min-height: 50vh;
-    padding: 0 10vh;
+  min-height: 50vh;
+  padding: 0 10vh;
 }
 
 /* This is setting up the grid for the page. */
 .gridcontainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 1vh;
-    font-family: Verdana;
-    max-width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1vh;
+  font-family: Verdana;
+  max-width: 100%;
 }
 
 /* Styling the grid items. */
 .griditem {
-    border: 2px solid rgb(169, 169, 169);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    margin: 10px;
-    padding: 50px;
-    font-size: 30px;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: rgb(206, 206, 206);
-    font-family: 'Roboto Condensed', sans-serif;
-    cursor: pointer;
-    background-color: rgb(66, 66, 66);
+  border: 2px solid rgb(169, 169, 169);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin: 10px;
+  padding: 50px;
+  font-size: 30px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(206, 206, 206);
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  background-color: rgb(66, 66, 66);
 }
 
 .griditem:hover{
-    color: rgb(255, 255, 255);
-    margin: 6px 10px;
-    border: rgb(105, 232, 105) 4px solid;
+  color: rgb(255, 255, 255);
+  margin: 6px 10px;
+  border: rgb(105, 232, 105) 4px solid;
 }
 
 .forms{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    text-align: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 
 .forms > form{
-    max-width: 100%;
-    width: calc(100% - 10%);
-    align-self: center;
+  max-width: 100%;
+  width: calc(100% - 10%);
+  align-self: center;
 }
 
 .pdec, .ptitle, .pname {
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.psubmit {
+  background-color: #4de65a;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.psubmitdel {
   
-  .psubmit {
-    background-color: #4de65a;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .psubmitdel {
-    
-    background-color: rgb(255, 84, 84);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.5s;
-  }
-  .psubmitdel:hover{
-    background-color: rgb(213, 0, 0);
-  }
-  .psubmitmod {
-    background-color: #ffbc58;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .psubmitmod:hover{
-    background-color: #ffa622;
-  }
-  
-  .psubmit:hover {
-    background-color: #00ae0f;
-  }
-  
-  .pform {
-    border-radius: 5px;
-    background-color: #e2e2e2;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    margin: 3vh 2%;
-  }
+  background-color: rgb(255, 84, 84);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.psubmitdel:hover{
+  background-color: rgb(213, 0, 0);
+}
+.psubmitmod {
+  background-color: #ffbc58;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.psubmitmod:hover{
+  background-color: #ffa622;
+}
+
+.psubmit:hover {
+  background-color: #00ae0f;
+}
+
+.pform {
+  border-radius: 5px;
+  background-color: #e2e2e2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 3vh 2%;
+}
 
 
 #alert{
-  background-color: red;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  z-index: 99 !important;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
+background-color: red;
+position: fixed;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-content: center;
+align-items: center;
+top: 0;
+left: 0;
+z-index: 99 !important;
+width: 100%;
+height: 100%;
+visibility: hidden;
 }
 
 
-  @media (max-width: 1050px){
-    .gridBody{
-        padding: 0 5vh;
-    }
+@media (max-width: 1050px){
+  .gridBody{
+      padding: 0 5vh;
+  }
 }
 
 @media (max-width: 900px){
-    .gridcontainer{
-      grid-template-columns: auto;
-      margin-left: 10vh;
-      margin-right: 10vh;
-      justify-content: center;
-    }
-    .griditem{
-        padding: 30px 20px;
-    }
-    .forms{
-        flex-direction: column;
-    }
+  .gridcontainer, .links{
+    grid-template-columns: auto;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    justify-content: center;
+  }
+  .griditem{
+      padding: 30px 20px;
+  }
+  .forms{
+      flex-direction: column;
   }
 
+}
 
-  
-  
-  
+
+
+

@@ -8,7 +8,19 @@ export default function Footer() {
         return (
             <div>
                 <div className={styles.footer}>
-                    <p><Link passHref href="/admin"><a id="flash">©</a></Link> James M 2022</p>
+                    <div></div>
+                    <p>© James M 2022</p>
+                </div>
+            </div>
+        )
+    }
+    if(session && session.user.role == "admin"){
+        return (
+            <div>
+                <div className={styles.footer}>
+                    <Link href="/admin" passHref><a id={styles.style2} data-replace="Admin" className={styles.logoutbut}><span>Admin</span></a></Link>
+                    <p>© James M 2022</p>
+                    <Link href="/auth/logout" passHref><a id={styles.style2} data-replace="Logout" className={styles.logoutbut}><span>Logout</span></a></Link>
                 </div>
             </div>
         )
@@ -17,8 +29,8 @@ export default function Footer() {
         <div>
             <div className={styles.footer}>
                 <p className={styles.username}>{session.user.name}</p>
-                <p><Link passHref href="/admin"><a id="flash">©</a></Link> James M 2022</p>
-                <Link href="/auth/logout" passHref><a className={styles.logoutbut}>Logout</a></Link>
+                <p>© James M 2022</p>
+                <Link href="/auth/logout" passHref><a id={styles.style2} data-replace="Logout" className={styles.logoutbut}><span>Logout</span></a></Link>
             </div>
         </div>
     )

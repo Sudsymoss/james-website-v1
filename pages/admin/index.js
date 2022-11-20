@@ -10,6 +10,7 @@ export default function Home() {
       <Head>
         <title>Admin</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet"></link>
       </Head>
       <Nav />
       <main className={styles.main}>
@@ -25,9 +26,14 @@ export default function Home() {
               <a>Role manager</a>
             </li>
           </Link>
-          <Link href="/auth" passHref>
+          <Link href="/auth/login" passHref>
             <li>
               <a>Login</a>
+            </li>
+          </Link>
+          <Link href="/auth/logout" passHref>
+            <li>
+              <a>Logout</a>
             </li>
           </Link>
         </ul>
