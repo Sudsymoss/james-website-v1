@@ -42,16 +42,18 @@ transition: background-size 0.2s ease-in-out;
     align-items: center;
 }
 
+
 .usericon{
     max-width: 5vh;
     margin: 0 5vh;
     border: 3px solid rgb(208, 208, 208);
     border-radius: 50%;
-    transition: border-color 0.3s ease-in-out;
+    transition: transform 0.7s cubic-bezier(0.83, 0.18, 0.21, 0.56), border-color 0.3s ease-in-out;
 }
 
 .usericon:hover{
     border-color: #d99a5a;
+    transform: rotate(360deg);
 }
 
 .acc{
