@@ -28,7 +28,7 @@ export default function Nav() {
                     <li><Link href="/" passHref><a>Home</a></Link></li>
                     <li><Link href="/about" passHref><a>About</a></Link></li>
                     <li><Link href="/projects" passHref><a>Projects</a></Link></li>
-                    <li id="conflash" className={styles.acc}><Link href="/auth/login" passHref><a>Account</a></Link></li>
+                    <li id="conflash" className={styles.acc}><Link href="/u/myaccount" passHref><a>Account</a></Link></li>
                     <Link href="/u/myaccount" passHref><a><img src={session.user.image} className={styles.usericon}></img></a></Link>
                 </ul>
             </div>
