@@ -25,12 +25,10 @@ export default function Home() {
             version!).
           </p>
         </section>
-
         <section className={styles.about}>
           <h3>Some of my other work:</h3>
           <p>(comming soon)</p>
         </section>
-
         <section className={styles.about}>
           <h3>Why use an account?</h3>
           <p>With an account you get access to:</p>

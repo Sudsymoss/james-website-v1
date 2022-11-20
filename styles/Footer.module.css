@@ -1,8 +1,8 @@
 .footer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     min-height: 10vh;
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     border-top: 1px solid gray;
 }
@@ -19,6 +19,17 @@
     cursor: none;
 }
 
+.username::before{
+    content: "User: ";
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.username{
+    color: gray !important;
+}
+
+
 .logoutbut {
     color: gray;
     transition: color 0.3s;
@@ -29,6 +40,7 @@
     background-position-x: 100%;
     background-repeat: no-repeat;
     transition: background-size 0.2s ease-in-out;
+    font-weight: 500;
 }
 
 .logoutbut:hover {

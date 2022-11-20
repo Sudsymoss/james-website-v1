@@ -8,26 +8,26 @@
     align-items: center;
 }
 
-.about {
-    
+.about>h3 {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33.33%;
+}
+.about{
+    text-align: left;
 }
 
+
 .aboutlist{
-    text-align: left;
     list-style-type: "▶  ";
 }
 
 .aboutbox{
     min-height: 70vh;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
     align-content: center;
+    text-align: left;
+    margin: 0 5vh;
 }
 
 
