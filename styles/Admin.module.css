@@ -7,13 +7,14 @@
   justify-content: center;
   align-items: center;
 }
-.links{
+
+.links {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0;
 }
 
-.links > li{
+.links>li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,15 +40,15 @@
 }
 
 
-.links >li:hover{
-  background-color:transparent;
+.links>li:hover {
+  background-color: transparent;
   color: rgb(34, 185, 134);
   border: 5px rgb(209, 209, 209) solid;
   cursor: pointer;
 }
 
-.links >li>a:hover{
-cursor: grabbing;
+.links>li>a:hover {
+  cursor: grabbing;
 }
 
 
@@ -95,27 +96,29 @@ cursor: grabbing;
   background-color: rgb(66, 66, 66);
 }
 
-.griditem:hover{
+.griditem:hover {
   color: rgb(255, 255, 255);
   margin: 6px 10px;
   border: rgb(105, 232, 105) 4px solid;
 }
 
-.forms{
-  display:flex;
+.forms {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   text-align: center;
 }
 
 
-.forms > form{
+.forms>form {
   max-width: 100%;
   width: calc(100% - 10%);
   align-self: center;
 }
 
-.pdec, .ptitle, .pname {
+.pdec,
+.ptitle,
+.pname {
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -132,8 +135,9 @@ cursor: grabbing;
   border-radius: 4px;
   cursor: pointer;
 }
+
 .psubmitdel {
-  
+
   background-color: rgb(255, 84, 84);
   color: white;
   padding: 14px 20px;
@@ -143,9 +147,11 @@ cursor: grabbing;
   cursor: pointer;
   transition: all 0.5s;
 }
-.psubmitdel:hover{
+
+.psubmitdel:hover {
   background-color: rgb(213, 0, 0);
 }
+
 .psubmitmod {
   background-color: #ffbc58;
   color: white;
@@ -155,11 +161,12 @@ cursor: grabbing;
   border-radius: 4px;
   cursor: pointer;
 }
-.psubmitmod:hover{
+
+.psubmitmod:hover {
   background-color: #ffa622;
 }
 
-.psubmit:hover {
+.psubmit:hover, .psubmit:active {
   background-color: #00ae0f;
 }
 
@@ -172,46 +179,89 @@ cursor: grabbing;
   margin: 3vh 2%;
 }
 
+.alertcon {
 
-#alert{
-background-color: red;
-position: fixed;
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-content: center;
-align-items: center;
-top: 0;
-left: 0;
-z-index: 99 !important;
-width: 100%;
-height: 100%;
-visibility: hidden;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: transparent;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 
-@media (max-width: 1050px){
-  .gridBody{
-      padding: 0 5vh;
+
+#alert {
+  text-align: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 20px;
+  padding: 10vh;
+  border: 10px solid black;
+  animation: bflash 0.8s infinite forwards;
+
+}
+
+
+@keyframes flash {
+  0% {
+    color: rgb(0, 0, 0);
+  }
+
+  50% {
+    color: rgb(255, 0, 0);
+  }
+
+  100% {
+    color: rgb(0, 0, 0)
   }
 }
 
-@media (max-width: 900px){
-  .gridcontainer, .links{
+@keyframes bflash {
+  0% {
+    border-color: red;
+  }
+
+  50% {
+    border-color: black;
+  }
+
+  100% {
+    border-color: red;
+  }
+}
+
+
+@media (max-width: 1050px) {
+  .gridBody {
+    padding: 0 5vh;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .gridcontainer,
+  .links {
     grid-template-columns: auto;
     margin-left: 10vh;
     margin-right: 10vh;
     justify-content: center;
   }
-  .griditem{
-      padding: 30px 20px;
-  }
-  .forms{
-      flex-direction: column;
+
+  .griditem {
+    padding: 30px 20px;
   }
 
+  .forms {
+    flex-direction: column;
+  }
+  #alert{
+    padding: 3vh;
+    border-width: 0.8vh;
+  }
 }
-
-
-
-

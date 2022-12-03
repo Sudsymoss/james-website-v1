@@ -36,8 +36,12 @@
     .about{
         width: auto;
     }
+    .about>h3{
+        text-align: left;
+    }
     .aboutbox{
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
     }
 }
