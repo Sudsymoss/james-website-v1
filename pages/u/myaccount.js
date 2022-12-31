@@ -5,12 +5,17 @@ import Footer from '../../components/footer'
 import { useState } from "react";
 import { useSession, getSession } from "next-auth/react"
 import Loader from '../../components/loader'
+import * as React from "react";
+import toast from "../../components/Toast";
 
 
 export default function Account() {
 
   const { data: session, status } = useSession()
   const [formData, setFormData] = useState({})
+  const notify = React.useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
   if (status === "loading") {
     return <Loader />
   }
@@ -30,7 +35,8 @@ export default function Account() {
     e.preventDefault()
     if (session.user.canbedeleted === "false") {
       e.preventDefault()
-      document.getElementById("alertcon").style.display = "flex";
+      notify("error", "Account cannot be deleted!");
+      notify("info", "If you belive this is a mistake please contact us!")
       return
     } else {
       document.getElementById("delcon").style.display = "flex";
@@ -71,16 +77,6 @@ export default function Account() {
           <button type="button" onClick={confirmProm} className={styles.psubmitdel}>delete</button>
         </form>
       </section>
-      <div className={styles.alertcon} id="alertcon">
-        <div id={styles.alert}>
-          <h1 id={styles.alerttitle}>!!ALERT!!</h1>
-          <p>This account can not be deleted!</p>
-          <h3>If you beleive this is a error please contact us!</h3>
-          <form onSubmit={reFre}>
-            <button className={styles.psubmit} type="button" onClick={reFre}>Dismiss</button>
-          </form>
-        </div>
-      </div>
       <div className={styles.alertcon} id="delcon">
         <div id={styles.alert}>
           <h1>Are you sure?</h1>

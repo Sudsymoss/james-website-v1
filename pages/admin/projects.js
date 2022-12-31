@@ -9,12 +9,17 @@ import { useRef } from "react";
 const prisma = new PrismaClient();
 import { useSession } from "next-auth/react";
 import Loader from "../../components/loader";
+import * as React from "react";
+import toast from "../../components/Toast";
 
 export default function Projectman({ dataa }) {
   const { data: session, status } = useSession();
   const [formData, setFormData] = useState({});
   const [projects, setProjects] = useState(dataa);
   const form = useRef(null);
+  const notify = React.useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
   if (status === "loading") {
     return <Loader />;
   }
@@ -23,13 +28,15 @@ export default function Projectman({ dataa }) {
   }
 
   async function savePost(e) {
-    form.current.reset();
+    
     e.preventDefault();
     setProjects([...projects, formData]);
     const response = await fetch("/api/projects", {
       method: "POST",
       body: JSON.stringify(formData),
     });
+    notify("success", "New Project created!")
+    form.current.reset();
     return await response.json();
   }
   async function delPost(e) {
@@ -38,6 +45,7 @@ export default function Projectman({ dataa }) {
       method: "DELETE",
       body: JSON.stringify(formData),
     });
+    notify("warning", "Project deleted!")
     location.reload();
     return await response.json();
   }
@@ -48,6 +56,7 @@ export default function Projectman({ dataa }) {
       method: "POST",
       body: JSON.stringify(formData),
     });
+    notify("success", "Project updated!")
     location.reload();
     return await response.json();
   }

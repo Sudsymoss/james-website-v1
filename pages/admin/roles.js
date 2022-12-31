@@ -8,12 +8,17 @@ import { useRef } from "react";
 const prisma = new PrismaClient();
 import { useSession } from "next-auth/react";
 import Loader from "../../components/loader";
+import * as React from "react";
+import toast from "../../components/Toast";
 
 export default function Roles({ dataa }) {
   const { data: session, status } = useSession();
   const [formData, setFormData] = useState({});
   const [users, setProjects] = useState(dataa);
   const form = useRef(null);
+  const notify = React.useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
   if (status === "loading") {
     return <Loader />;
   }
@@ -29,6 +34,7 @@ export default function Roles({ dataa }) {
       body: JSON.stringify(formData),
     });
     location.reload();
+    notify("success", "User role updated!")
     return await response.json();
   }
   async function delUser(e) {
@@ -37,6 +43,7 @@ export default function Roles({ dataa }) {
       method: "DELETE",
       body: JSON.stringify(formData),
     });
+    notify("warning", "User account deleted!")
     location.reload();
     return await response.json();
   }

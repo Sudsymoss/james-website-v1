@@ -2,14 +2,23 @@ import { getProviders, signIn, useSession, signOut } from "next-auth/react";
 import styles from "../../styles/Login.module.css";
 import Head from "next/head";
 import Link from 'next/link'
+import * as React from "react";
+import toast from "../../components/Toast";
 
 export default function SignIn({ providers }) {
   const { data: session, status } = useSession();
+  const notify = React.useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
   if (status === "loading"){
     return <p>Loading...</p>
   }
   if (status === "authenticated"){
-    return location.replace("./logout")
+    notify("warning", "Already logged in!")
+    setTimeout(() => {
+      location.replace("./logout");
+    }, 2000);
+    return
   }
     return (
       <div>
